@@ -1,0 +1,26 @@
+#align {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width: 15vw;
+    flex-wrap: wrap;  
+    margin: auto;
+    text-align: center;
+    align-content: space-between;
+    height: 200px;
+}
+#title {
+    font-size: 50px;
+}
+#lists {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;  
+    margin: auto;
+    width: 20vw;
+    text-align: center;
+    height: 200px;
+}
