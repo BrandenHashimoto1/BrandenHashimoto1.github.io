@@ -1,5 +1,6 @@
 let aList = []
 let dList = []
+let dayLeftList = []
 let m0 = 0
 let m1 = 31
 let m2 = 59
@@ -75,8 +76,8 @@ function addDate() {
     dList.push(d)
     console.log(aList)
     console.log(dList)
-    document.getElementById("listOfAssignments").innerHTML = (aList) + '<br>'
-    document.getElementById("listOfDates").innerHTML = (dList) + '<br>'
+    document.getElementById("listOfAssignments").innerHTML = aList.join('<br>')
+    document.getElementById("listOfDates").innerHTML = dList.join('<br>')
     const date1 = new Date()
     let x = date1.getDate()
     let w = date1.getMonth()
@@ -136,7 +137,8 @@ function addDate() {
     let yearCalc = year - y
     yearCalc = yearCalc * 365
     let daysLeft = totalDay1 - totalDay2 + yearCalc
-    
+    dayLeftList.push(daysLeft)
     console.log(daysLeft)
-    document.getElementById("daysLeft").innerHTML = daysLeft
+    document.getElementById("daysLeft").innerHTML = dayLeftList.join('<br>')
+
 }
