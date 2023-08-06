@@ -1,6 +1,6 @@
-let aList = []
+/*let aList = []
 let dList = []
-let dayLeftList = []
+let dayLeftList = []*/
 let m0 = 0
 let m1 = 31
 let m2 = 59
@@ -141,7 +141,15 @@ function addDate() {
     console.log(daysLeft)
     document.getElementById("daysLeft").innerHTML = dayLeftList.join('<br>')
     let aListString = JSON.stringify(aList)
+    let dListString = JSON.stringify(dList)
+    let DLListString = JSON.stringify(dayLeftList)
     localStorage.setItem("aListS",aListString)
-    localStorage.setItem("dList",dList)
-    localStorage.setItem("dayLeftList",dayLeftList)
+    localStorage.setItem("dListS",dListString)
+    localStorage.setItem("daysLeftListS",DLListString)
+}
+function nukeList() {
+    localStorage.clear
+    aList.clear()
+    dList.clear()
+    dayLeftList.clear()
 }

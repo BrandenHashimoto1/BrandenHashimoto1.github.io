@@ -18,6 +18,7 @@
     <span id="title">To Do List</span>
     <div class="inputs"><input id="assignment"><input id="date" type="date"></div>
     <button onclick="addDate()">Add Assignment and Date to List</button>
+    <button onclick="nukeList()">Nuke List</button>
     
     
 </div>
@@ -26,17 +27,30 @@
     <span id="listOfDates"></span>
     <span id="daysLeft"></span>
 </div>
-  
+
 </body>
 <script>
+    let aList = []
+    let dList = []
+    let dayLeftList = []
     window.onload = function() {
-        let aList = localStorage.getItem("aList")
-        let reList = JSON.parse(aList)
-        let dList = localStorage.getItem("dList") 
-        let dayLeftList = localStorage.getItem("dayLeftList") 
-        document.getElementById("listOfAssignments").innerHTML = reList.join('<br>')
-        document.getElementById("listOfDates").innerHTML = dList.join('<br>')
-        document.getElementById("daysLeft").innerHTML = dayLeftList.join('<br>')
+        let aListStr = localStorage.getItem("aListS")
+        let dListStr = localStorage.getItem("dListS")
+        let daysLeftListStr = localStorage.getItem("daysLeftListS")
+        let reListA = JSON.parse(aListStr)
+        let reListD = JSON.parse(dListStr)
+        let reListDL = JSON.parse(daysLeftListStr)
+        aList = reListA
+        dList = reListD
+        console.log(aList)
+        daysLeftList = reListDL
+        if(aList == "null" || aList.length == 0) {
+            let aList = []
+            console.log(reListA)
+        }
+        document.getElementById("listOfAssignments").innerHTML = reListA.join('<br>')
+        document.getElementById("listOfDates").innerHTML = reListD.join('<br>')
+        document.getElementById("daysLeft").innerHTML = reListDL.join('<br>')
     }
 </script>
 </html>
