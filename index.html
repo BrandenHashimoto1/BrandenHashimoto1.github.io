@@ -30,10 +30,11 @@
 </body>
 <script>
     window.onload = function() {
-        localStorage.getItem("aList") = aList
-        localStorage.getItem("dList") = dList
-        localStorage.getItem("dayLeftList") = dayLeftList
-        document.getElementById("listOfAssignments").innerHTML = aList.join('<br>')
+        let aList = localStorage.getItem("aList")
+        let reList = JSON.parse(aList)
+        let dList = localStorage.getItem("dList") 
+        let dayLeftList = localStorage.getItem("dayLeftList") 
+        document.getElementById("listOfAssignments").innerHTML = reList.join('<br>')
         document.getElementById("listOfDates").innerHTML = dList.join('<br>')
         document.getElementById("daysLeft").innerHTML = dayLeftList.join('<br>')
     }

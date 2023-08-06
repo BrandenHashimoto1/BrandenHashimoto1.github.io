@@ -140,7 +140,8 @@ function addDate() {
     dayLeftList.push(daysLeft)
     console.log(daysLeft)
     document.getElementById("daysLeft").innerHTML = dayLeftList.join('<br>')
-    localStorage.setItem("aList",aList)
+    let aListString = JSON.stringify(aList)
+    localStorage.setItem("aListS",aListString)
     localStorage.setItem("dList",dList)
     localStorage.setItem("dayLeftList",dayLeftList)
 }
